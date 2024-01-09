@@ -19,6 +19,15 @@ class Author extends DataObject
         'Book' => 'Book'
     );
 
+    private static $summary_fields = array(
+        'Name' => 'Name',
+        'Country' => 'Country',
+        'BornDate.Long' => 'Date of Born',
+        'Language' => 'Lang',
+        'Email' => 'Email',
+        'Address' => 'Address'
+    );
+
     public function getCMSFields()
     {
         $fields = FieldList::create(TabSet::create('Root'));

@@ -21,9 +21,22 @@ class Book extends DataObject
     private static $summary_fields = array(
         'BookName' => 'Name of Book',
         'Description' => 'Description',
-        'PublishDate' => 'Publish',
+        'PublishDate.Long' => 'Publish',
         'Author.Name' => 'Author'
     );
+
+    public function searchableFields()
+    {
+        return array(
+            'PublishDate' => array(
+                'filter' => 'GreaterThanOrEqualFilter',
+                'title' => 'Publish Date',
+                'field' => DateField::create('PublishDate')
+                    ->setConfig('showcalendar', true)
+                    ->setConfig('dateformat', 'd MMMM yyyy'),
+            )
+        );
+    }
 
 
     public function getCMSFields()
