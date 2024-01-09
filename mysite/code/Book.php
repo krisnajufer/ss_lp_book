@@ -30,7 +30,7 @@ class Book extends DataObject
         return array(
             'PublishDate' => array(
                 'filter' => 'GreaterThanOrEqualFilter',
-                'title' => 'Publish Date',
+                'title' => 'Start Publish Date',
                 'field' => DateField::create('PublishDate')
                     ->setConfig('showcalendar', true)
                     ->setConfig('dateformat', 'd MMMM yyyy'),
